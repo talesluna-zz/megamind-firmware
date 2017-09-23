@@ -15,5 +15,8 @@ Receber comandos via porta serial e executar o comando e enviar respostas equiva
 ### Build
 ```
 cmake .
+
 make
-make upload  #Faz upload para a placa (verificar porta USB usada em CMakeLists.txt e a permissão de escrita)
+
+#Faz upload para a placa (verificar porta USB usada em CMakeLists.txt e a permissão de escrita)
+make upload
