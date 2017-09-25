@@ -1,4 +1,0 @@
-# Hashes of file build rules.
-caf7cea50ccc0ec215d46af35ed0512a CMakeFiles/Megamind-size
-e41bc69eedc8b1030779bec392ea83c3 CMakeFiles/Megamind-upload
-064f8ba415e9003ca9d30ae3e0a14319 Megamind_Megamind.ino.cpp

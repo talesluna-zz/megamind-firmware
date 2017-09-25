@@ -1,7 +1,0 @@
-/home/blaster/Megamind/CMakeFiles/rebuild_cache.dir
-/home/blaster/Megamind/CMakeFiles/Megamind.dir
-/home/blaster/Megamind/CMakeFiles/edit_cache.dir
-/home/blaster/Megamind/CMakeFiles/uno_CORE.dir
-/home/blaster/Megamind/CMakeFiles/Megamind-size.dir
-/home/blaster/Megamind/CMakeFiles/Megamind-upload.dir
-/home/blaster/Megamind/CMakeFiles/upload.dir
