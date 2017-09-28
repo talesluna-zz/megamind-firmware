@@ -1,15 +1,54 @@
-cmake_minimum_required(VERSION 2.8.4)
-set(CMAKE_TOOLCHAIN_FILE ${CMAKE_SOURCE_DIR}/cmake/ArduinoToolchain.cmake)
-set(PROJECT_NAME Megamind)
-project(${PROJECT_NAME})
+cmake_minimum_required(VERSION 3.2)
+project(megamind-firmware)
 
-set(${CMAKE_PROJECT_NAME}_SKETCH Megamind.ino)
+include(CMakeListsPrivate.txt)
 
-#### Uncomment below additional settings as needed.
-# set(${CMAKE_PROJECT_NAME}_BOARD mega)
- set(${CMAKE_PROJECT_NAME}_PORT /dev/ttyUSB0)
-# set(mega.build.mcu atmega2560)
-# set(mega.upload.protocol wiring)
-# set(mega.upload.speed 115200)
+add_custom_target(
+    PLATFORMIO_BUILD ALL
+    COMMAND ${PLATFORMIO_CMD} -f -c clion run
+    WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+)
 
-generate_arduino_firmware(${CMAKE_PROJECT_NAME})
+add_custom_target(
+    PLATFORMIO_UPLOAD ALL
+    COMMAND ${PLATFORMIO_CMD} -f -c clion run --target upload
+    WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+)
+
+add_custom_target(
+    PLATFORMIO_CLEAN ALL
+    COMMAND ${PLATFORMIO_CMD} -f -c clion run --target clean
+    WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+)
+
+add_custom_target(
+    PLATFORMIO_TEST ALL
+    COMMAND ${PLATFORMIO_CMD} -f -c clion test
+    WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+)
+
+add_custom_target(
+    PLATFORMIO_PROGRAM ALL
+    COMMAND ${PLATFORMIO_CMD} -f -c clion run --target program
+    WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+)
+
+add_custom_target(
+    PLATFORMIO_UPLOADFS ALL
+    COMMAND ${PLATFORMIO_CMD} -f -c clion run --target uploadfs
+    WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+)
+
+add_custom_target(
+    PLATFORMIO_UPDATE_ALL ALL
+    COMMAND ${PLATFORMIO_CMD} -f -c clion update
+    WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+)
+
+add_custom_target(
+    PLATFORMIO_REBUILD_PROJECT_INDEX ALL
+    COMMAND ${PLATFORMIO_CMD} -f -c clion init --ide clion
+    WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+)
+
+add_executable(${PROJECT_NAME} ${SRC_LIST})

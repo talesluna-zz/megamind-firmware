@@ -48,24 +48,13 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/Projects/Megamind/megamind-arduino-firmware
+CMAKE_SOURCE_DIR = /root/Projects/Megamind/megamind-firmware
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/Projects/Megamind/megamind-arduino-firmware
+CMAKE_BINARY_DIR = /root/Projects/Megamind/megamind-firmware
 
 #=============================================================================
 # Targets provided globally by CMake.
-
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
 
 # Special rule for the target edit_cache
 edit_cache:
@@ -78,11 +67,22 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
+
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/Projects/Megamind/megamind-arduino-firmware/CMakeFiles /root/Projects/Megamind/megamind-arduino-firmware/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/Projects/Megamind/megamind-firmware/CMakeFiles /root/Projects/Megamind/megamind-firmware/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/Projects/Megamind/megamind-arduino-firmware/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/Projects/Megamind/megamind-firmware/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -111,744 +111,148 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named Megamind
+# Target rules for targets named PLATFORMIO_REBUILD_PROJECT_INDEX
 
 # Build rule for target.
-Megamind: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 Megamind
-.PHONY : Megamind
+PLATFORMIO_REBUILD_PROJECT_INDEX: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 PLATFORMIO_REBUILD_PROJECT_INDEX
+.PHONY : PLATFORMIO_REBUILD_PROJECT_INDEX
 
 # fast build rule for target.
-Megamind/fast:
-	$(MAKE) -f CMakeFiles/Megamind.dir/build.make CMakeFiles/Megamind.dir/build
-.PHONY : Megamind/fast
+PLATFORMIO_REBUILD_PROJECT_INDEX/fast:
+	$(MAKE) -f CMakeFiles/PLATFORMIO_REBUILD_PROJECT_INDEX.dir/build.make CMakeFiles/PLATFORMIO_REBUILD_PROJECT_INDEX.dir/build
+.PHONY : PLATFORMIO_REBUILD_PROJECT_INDEX/fast
 
 #=============================================================================
-# Target rules for targets named uno_CORE
+# Target rules for targets named PLATFORMIO_UPLOAD
 
 # Build rule for target.
-uno_CORE: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 uno_CORE
-.PHONY : uno_CORE
+PLATFORMIO_UPLOAD: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 PLATFORMIO_UPLOAD
+.PHONY : PLATFORMIO_UPLOAD
 
 # fast build rule for target.
-uno_CORE/fast:
-	$(MAKE) -f CMakeFiles/uno_CORE.dir/build.make CMakeFiles/uno_CORE.dir/build
-.PHONY : uno_CORE/fast
+PLATFORMIO_UPLOAD/fast:
+	$(MAKE) -f CMakeFiles/PLATFORMIO_UPLOAD.dir/build.make CMakeFiles/PLATFORMIO_UPLOAD.dir/build
+.PHONY : PLATFORMIO_UPLOAD/fast
 
 #=============================================================================
-# Target rules for targets named Megamind-size
+# Target rules for targets named PLATFORMIO_UPDATE_ALL
 
 # Build rule for target.
-Megamind-size: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 Megamind-size
-.PHONY : Megamind-size
+PLATFORMIO_UPDATE_ALL: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 PLATFORMIO_UPDATE_ALL
+.PHONY : PLATFORMIO_UPDATE_ALL
 
 # fast build rule for target.
-Megamind-size/fast:
-	$(MAKE) -f CMakeFiles/Megamind-size.dir/build.make CMakeFiles/Megamind-size.dir/build
-.PHONY : Megamind-size/fast
+PLATFORMIO_UPDATE_ALL/fast:
+	$(MAKE) -f CMakeFiles/PLATFORMIO_UPDATE_ALL.dir/build.make CMakeFiles/PLATFORMIO_UPDATE_ALL.dir/build
+.PHONY : PLATFORMIO_UPDATE_ALL/fast
 
 #=============================================================================
-# Target rules for targets named Megamind-upload
+# Target rules for targets named PLATFORMIO_BUILD
 
 # Build rule for target.
-Megamind-upload: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 Megamind-upload
-.PHONY : Megamind-upload
+PLATFORMIO_BUILD: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 PLATFORMIO_BUILD
+.PHONY : PLATFORMIO_BUILD
 
 # fast build rule for target.
-Megamind-upload/fast:
-	$(MAKE) -f CMakeFiles/Megamind-upload.dir/build.make CMakeFiles/Megamind-upload.dir/build
-.PHONY : Megamind-upload/fast
+PLATFORMIO_BUILD/fast:
+	$(MAKE) -f CMakeFiles/PLATFORMIO_BUILD.dir/build.make CMakeFiles/PLATFORMIO_BUILD.dir/build
+.PHONY : PLATFORMIO_BUILD/fast
 
 #=============================================================================
-# Target rules for targets named upload
+# Target rules for targets named PLATFORMIO_UPLOADFS
 
 # Build rule for target.
-upload: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 upload
-.PHONY : upload
+PLATFORMIO_UPLOADFS: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 PLATFORMIO_UPLOADFS
+.PHONY : PLATFORMIO_UPLOADFS
 
 # fast build rule for target.
-upload/fast:
-	$(MAKE) -f CMakeFiles/upload.dir/build.make CMakeFiles/upload.dir/build
-.PHONY : upload/fast
+PLATFORMIO_UPLOADFS/fast:
+	$(MAKE) -f CMakeFiles/PLATFORMIO_UPLOADFS.dir/build.make CMakeFiles/PLATFORMIO_UPLOADFS.dir/build
+.PHONY : PLATFORMIO_UPLOADFS/fast
 
-Megamind_Megamind.ino.obj: Megamind_Megamind.ino.cpp.obj
+#=============================================================================
+# Target rules for targets named megamind-firmware
 
-.PHONY : Megamind_Megamind.ino.obj
+# Build rule for target.
+megamind-firmware: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 megamind-firmware
+.PHONY : megamind-firmware
 
-# target to build an object file
-Megamind_Megamind.ino.cpp.obj:
-	$(MAKE) -f CMakeFiles/Megamind.dir/build.make CMakeFiles/Megamind.dir/Megamind_Megamind.ino.cpp.obj
-.PHONY : Megamind_Megamind.ino.cpp.obj
+# fast build rule for target.
+megamind-firmware/fast:
+	$(MAKE) -f CMakeFiles/megamind-firmware.dir/build.make CMakeFiles/megamind-firmware.dir/build
+.PHONY : megamind-firmware/fast
 
-Megamind_Megamind.ino.i: Megamind_Megamind.ino.cpp.i
+#=============================================================================
+# Target rules for targets named PLATFORMIO_CLEAN
 
-.PHONY : Megamind_Megamind.ino.i
+# Build rule for target.
+PLATFORMIO_CLEAN: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 PLATFORMIO_CLEAN
+.PHONY : PLATFORMIO_CLEAN
 
-# target to preprocess a source file
-Megamind_Megamind.ino.cpp.i:
-	$(MAKE) -f CMakeFiles/Megamind.dir/build.make CMakeFiles/Megamind.dir/Megamind_Megamind.ino.cpp.i
-.PHONY : Megamind_Megamind.ino.cpp.i
+# fast build rule for target.
+PLATFORMIO_CLEAN/fast:
+	$(MAKE) -f CMakeFiles/PLATFORMIO_CLEAN.dir/build.make CMakeFiles/PLATFORMIO_CLEAN.dir/build
+.PHONY : PLATFORMIO_CLEAN/fast
 
-Megamind_Megamind.ino.s: Megamind_Megamind.ino.cpp.s
+#=============================================================================
+# Target rules for targets named PLATFORMIO_TEST
 
-.PHONY : Megamind_Megamind.ino.s
+# Build rule for target.
+PLATFORMIO_TEST: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 PLATFORMIO_TEST
+.PHONY : PLATFORMIO_TEST
 
-# target to generate assembly for a file
-Megamind_Megamind.ino.cpp.s:
-	$(MAKE) -f CMakeFiles/Megamind.dir/build.make CMakeFiles/Megamind.dir/Megamind_Megamind.ino.cpp.s
-.PHONY : Megamind_Megamind.ino.cpp.s
+# fast build rule for target.
+PLATFORMIO_TEST/fast:
+	$(MAKE) -f CMakeFiles/PLATFORMIO_TEST.dir/build.make CMakeFiles/PLATFORMIO_TEST.dir/build
+.PHONY : PLATFORMIO_TEST/fast
 
-opt/arduino/hardware/arduino/avr/cores/arduino/CDC.obj: opt/arduino/hardware/arduino/avr/cores/arduino/CDC.cpp.obj
+#=============================================================================
+# Target rules for targets named PLATFORMIO_PROGRAM
 
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/CDC.obj
+# Build rule for target.
+PLATFORMIO_PROGRAM: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 PLATFORMIO_PROGRAM
+.PHONY : PLATFORMIO_PROGRAM
 
-# target to build an object file
-opt/arduino/hardware/arduino/avr/cores/arduino/CDC.cpp.obj:
-	$(MAKE) -f CMakeFiles/uno_CORE.dir/build.make CMakeFiles/uno_CORE.dir/opt/arduino/hardware/arduino/avr/cores/arduino/CDC.cpp.obj
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/CDC.cpp.obj
+# fast build rule for target.
+PLATFORMIO_PROGRAM/fast:
+	$(MAKE) -f CMakeFiles/PLATFORMIO_PROGRAM.dir/build.make CMakeFiles/PLATFORMIO_PROGRAM.dir/build
+.PHONY : PLATFORMIO_PROGRAM/fast
 
-opt/arduino/hardware/arduino/avr/cores/arduino/CDC.i: opt/arduino/hardware/arduino/avr/cores/arduino/CDC.cpp.i
+src/main.o: src/main.cpp.o
 
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/CDC.i
-
-# target to preprocess a source file
-opt/arduino/hardware/arduino/avr/cores/arduino/CDC.cpp.i:
-	$(MAKE) -f CMakeFiles/uno_CORE.dir/build.make CMakeFiles/uno_CORE.dir/opt/arduino/hardware/arduino/avr/cores/arduino/CDC.cpp.i
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/CDC.cpp.i
-
-opt/arduino/hardware/arduino/avr/cores/arduino/CDC.s: opt/arduino/hardware/arduino/avr/cores/arduino/CDC.cpp.s
-
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/CDC.s
-
-# target to generate assembly for a file
-opt/arduino/hardware/arduino/avr/cores/arduino/CDC.cpp.s:
-	$(MAKE) -f CMakeFiles/uno_CORE.dir/build.make CMakeFiles/uno_CORE.dir/opt/arduino/hardware/arduino/avr/cores/arduino/CDC.cpp.s
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/CDC.cpp.s
-
-opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial.obj: opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial.cpp.obj
-
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial.obj
+.PHONY : src/main.o
 
 # target to build an object file
-opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial.cpp.obj:
-	$(MAKE) -f CMakeFiles/uno_CORE.dir/build.make CMakeFiles/uno_CORE.dir/opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial.cpp.obj
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial.cpp.obj
+src/main.cpp.o:
+	$(MAKE) -f CMakeFiles/megamind-firmware.dir/build.make CMakeFiles/megamind-firmware.dir/src/main.cpp.o
+.PHONY : src/main.cpp.o
 
-opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial.i: opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial.cpp.i
+src/main.i: src/main.cpp.i
 
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial.i
-
-# target to preprocess a source file
-opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial.cpp.i:
-	$(MAKE) -f CMakeFiles/uno_CORE.dir/build.make CMakeFiles/uno_CORE.dir/opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial.cpp.i
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial.cpp.i
-
-opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial.s: opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial.cpp.s
-
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial.s
-
-# target to generate assembly for a file
-opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial.cpp.s:
-	$(MAKE) -f CMakeFiles/uno_CORE.dir/build.make CMakeFiles/uno_CORE.dir/opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial.cpp.s
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial.cpp.s
-
-opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial0.obj: opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial0.cpp.obj
-
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial0.obj
-
-# target to build an object file
-opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial0.cpp.obj:
-	$(MAKE) -f CMakeFiles/uno_CORE.dir/build.make CMakeFiles/uno_CORE.dir/opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial0.cpp.obj
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial0.cpp.obj
-
-opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial0.i: opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial0.cpp.i
-
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial0.i
+.PHONY : src/main.i
 
 # target to preprocess a source file
-opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial0.cpp.i:
-	$(MAKE) -f CMakeFiles/uno_CORE.dir/build.make CMakeFiles/uno_CORE.dir/opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial0.cpp.i
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial0.cpp.i
+src/main.cpp.i:
+	$(MAKE) -f CMakeFiles/megamind-firmware.dir/build.make CMakeFiles/megamind-firmware.dir/src/main.cpp.i
+.PHONY : src/main.cpp.i
 
-opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial0.s: opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial0.cpp.s
+src/main.s: src/main.cpp.s
 
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial0.s
-
-# target to generate assembly for a file
-opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial0.cpp.s:
-	$(MAKE) -f CMakeFiles/uno_CORE.dir/build.make CMakeFiles/uno_CORE.dir/opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial0.cpp.s
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial0.cpp.s
-
-opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial1.obj: opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial1.cpp.obj
-
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial1.obj
-
-# target to build an object file
-opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial1.cpp.obj:
-	$(MAKE) -f CMakeFiles/uno_CORE.dir/build.make CMakeFiles/uno_CORE.dir/opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial1.cpp.obj
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial1.cpp.obj
-
-opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial1.i: opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial1.cpp.i
-
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial1.i
-
-# target to preprocess a source file
-opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial1.cpp.i:
-	$(MAKE) -f CMakeFiles/uno_CORE.dir/build.make CMakeFiles/uno_CORE.dir/opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial1.cpp.i
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial1.cpp.i
-
-opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial1.s: opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial1.cpp.s
-
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial1.s
+.PHONY : src/main.s
 
 # target to generate assembly for a file
-opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial1.cpp.s:
-	$(MAKE) -f CMakeFiles/uno_CORE.dir/build.make CMakeFiles/uno_CORE.dir/opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial1.cpp.s
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial1.cpp.s
-
-opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial2.obj: opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial2.cpp.obj
-
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial2.obj
-
-# target to build an object file
-opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial2.cpp.obj:
-	$(MAKE) -f CMakeFiles/uno_CORE.dir/build.make CMakeFiles/uno_CORE.dir/opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial2.cpp.obj
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial2.cpp.obj
-
-opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial2.i: opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial2.cpp.i
-
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial2.i
-
-# target to preprocess a source file
-opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial2.cpp.i:
-	$(MAKE) -f CMakeFiles/uno_CORE.dir/build.make CMakeFiles/uno_CORE.dir/opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial2.cpp.i
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial2.cpp.i
-
-opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial2.s: opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial2.cpp.s
-
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial2.s
-
-# target to generate assembly for a file
-opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial2.cpp.s:
-	$(MAKE) -f CMakeFiles/uno_CORE.dir/build.make CMakeFiles/uno_CORE.dir/opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial2.cpp.s
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial2.cpp.s
-
-opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial3.obj: opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial3.cpp.obj
-
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial3.obj
-
-# target to build an object file
-opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial3.cpp.obj:
-	$(MAKE) -f CMakeFiles/uno_CORE.dir/build.make CMakeFiles/uno_CORE.dir/opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial3.cpp.obj
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial3.cpp.obj
-
-opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial3.i: opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial3.cpp.i
-
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial3.i
-
-# target to preprocess a source file
-opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial3.cpp.i:
-	$(MAKE) -f CMakeFiles/uno_CORE.dir/build.make CMakeFiles/uno_CORE.dir/opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial3.cpp.i
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial3.cpp.i
-
-opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial3.s: opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial3.cpp.s
-
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial3.s
-
-# target to generate assembly for a file
-opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial3.cpp.s:
-	$(MAKE) -f CMakeFiles/uno_CORE.dir/build.make CMakeFiles/uno_CORE.dir/opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial3.cpp.s
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial3.cpp.s
-
-opt/arduino/hardware/arduino/avr/cores/arduino/IPAddress.obj: opt/arduino/hardware/arduino/avr/cores/arduino/IPAddress.cpp.obj
-
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/IPAddress.obj
-
-# target to build an object file
-opt/arduino/hardware/arduino/avr/cores/arduino/IPAddress.cpp.obj:
-	$(MAKE) -f CMakeFiles/uno_CORE.dir/build.make CMakeFiles/uno_CORE.dir/opt/arduino/hardware/arduino/avr/cores/arduino/IPAddress.cpp.obj
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/IPAddress.cpp.obj
-
-opt/arduino/hardware/arduino/avr/cores/arduino/IPAddress.i: opt/arduino/hardware/arduino/avr/cores/arduino/IPAddress.cpp.i
-
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/IPAddress.i
-
-# target to preprocess a source file
-opt/arduino/hardware/arduino/avr/cores/arduino/IPAddress.cpp.i:
-	$(MAKE) -f CMakeFiles/uno_CORE.dir/build.make CMakeFiles/uno_CORE.dir/opt/arduino/hardware/arduino/avr/cores/arduino/IPAddress.cpp.i
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/IPAddress.cpp.i
-
-opt/arduino/hardware/arduino/avr/cores/arduino/IPAddress.s: opt/arduino/hardware/arduino/avr/cores/arduino/IPAddress.cpp.s
-
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/IPAddress.s
-
-# target to generate assembly for a file
-opt/arduino/hardware/arduino/avr/cores/arduino/IPAddress.cpp.s:
-	$(MAKE) -f CMakeFiles/uno_CORE.dir/build.make CMakeFiles/uno_CORE.dir/opt/arduino/hardware/arduino/avr/cores/arduino/IPAddress.cpp.s
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/IPAddress.cpp.s
-
-opt/arduino/hardware/arduino/avr/cores/arduino/PluggableUSB.obj: opt/arduino/hardware/arduino/avr/cores/arduino/PluggableUSB.cpp.obj
-
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/PluggableUSB.obj
-
-# target to build an object file
-opt/arduino/hardware/arduino/avr/cores/arduino/PluggableUSB.cpp.obj:
-	$(MAKE) -f CMakeFiles/uno_CORE.dir/build.make CMakeFiles/uno_CORE.dir/opt/arduino/hardware/arduino/avr/cores/arduino/PluggableUSB.cpp.obj
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/PluggableUSB.cpp.obj
-
-opt/arduino/hardware/arduino/avr/cores/arduino/PluggableUSB.i: opt/arduino/hardware/arduino/avr/cores/arduino/PluggableUSB.cpp.i
-
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/PluggableUSB.i
-
-# target to preprocess a source file
-opt/arduino/hardware/arduino/avr/cores/arduino/PluggableUSB.cpp.i:
-	$(MAKE) -f CMakeFiles/uno_CORE.dir/build.make CMakeFiles/uno_CORE.dir/opt/arduino/hardware/arduino/avr/cores/arduino/PluggableUSB.cpp.i
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/PluggableUSB.cpp.i
-
-opt/arduino/hardware/arduino/avr/cores/arduino/PluggableUSB.s: opt/arduino/hardware/arduino/avr/cores/arduino/PluggableUSB.cpp.s
-
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/PluggableUSB.s
-
-# target to generate assembly for a file
-opt/arduino/hardware/arduino/avr/cores/arduino/PluggableUSB.cpp.s:
-	$(MAKE) -f CMakeFiles/uno_CORE.dir/build.make CMakeFiles/uno_CORE.dir/opt/arduino/hardware/arduino/avr/cores/arduino/PluggableUSB.cpp.s
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/PluggableUSB.cpp.s
-
-opt/arduino/hardware/arduino/avr/cores/arduino/Print.obj: opt/arduino/hardware/arduino/avr/cores/arduino/Print.cpp.obj
-
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/Print.obj
-
-# target to build an object file
-opt/arduino/hardware/arduino/avr/cores/arduino/Print.cpp.obj:
-	$(MAKE) -f CMakeFiles/uno_CORE.dir/build.make CMakeFiles/uno_CORE.dir/opt/arduino/hardware/arduino/avr/cores/arduino/Print.cpp.obj
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/Print.cpp.obj
-
-opt/arduino/hardware/arduino/avr/cores/arduino/Print.i: opt/arduino/hardware/arduino/avr/cores/arduino/Print.cpp.i
-
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/Print.i
-
-# target to preprocess a source file
-opt/arduino/hardware/arduino/avr/cores/arduino/Print.cpp.i:
-	$(MAKE) -f CMakeFiles/uno_CORE.dir/build.make CMakeFiles/uno_CORE.dir/opt/arduino/hardware/arduino/avr/cores/arduino/Print.cpp.i
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/Print.cpp.i
-
-opt/arduino/hardware/arduino/avr/cores/arduino/Print.s: opt/arduino/hardware/arduino/avr/cores/arduino/Print.cpp.s
-
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/Print.s
-
-# target to generate assembly for a file
-opt/arduino/hardware/arduino/avr/cores/arduino/Print.cpp.s:
-	$(MAKE) -f CMakeFiles/uno_CORE.dir/build.make CMakeFiles/uno_CORE.dir/opt/arduino/hardware/arduino/avr/cores/arduino/Print.cpp.s
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/Print.cpp.s
-
-opt/arduino/hardware/arduino/avr/cores/arduino/Stream.obj: opt/arduino/hardware/arduino/avr/cores/arduino/Stream.cpp.obj
-
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/Stream.obj
-
-# target to build an object file
-opt/arduino/hardware/arduino/avr/cores/arduino/Stream.cpp.obj:
-	$(MAKE) -f CMakeFiles/uno_CORE.dir/build.make CMakeFiles/uno_CORE.dir/opt/arduino/hardware/arduino/avr/cores/arduino/Stream.cpp.obj
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/Stream.cpp.obj
-
-opt/arduino/hardware/arduino/avr/cores/arduino/Stream.i: opt/arduino/hardware/arduino/avr/cores/arduino/Stream.cpp.i
-
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/Stream.i
-
-# target to preprocess a source file
-opt/arduino/hardware/arduino/avr/cores/arduino/Stream.cpp.i:
-	$(MAKE) -f CMakeFiles/uno_CORE.dir/build.make CMakeFiles/uno_CORE.dir/opt/arduino/hardware/arduino/avr/cores/arduino/Stream.cpp.i
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/Stream.cpp.i
-
-opt/arduino/hardware/arduino/avr/cores/arduino/Stream.s: opt/arduino/hardware/arduino/avr/cores/arduino/Stream.cpp.s
-
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/Stream.s
-
-# target to generate assembly for a file
-opt/arduino/hardware/arduino/avr/cores/arduino/Stream.cpp.s:
-	$(MAKE) -f CMakeFiles/uno_CORE.dir/build.make CMakeFiles/uno_CORE.dir/opt/arduino/hardware/arduino/avr/cores/arduino/Stream.cpp.s
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/Stream.cpp.s
-
-opt/arduino/hardware/arduino/avr/cores/arduino/Tone.obj: opt/arduino/hardware/arduino/avr/cores/arduino/Tone.cpp.obj
-
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/Tone.obj
-
-# target to build an object file
-opt/arduino/hardware/arduino/avr/cores/arduino/Tone.cpp.obj:
-	$(MAKE) -f CMakeFiles/uno_CORE.dir/build.make CMakeFiles/uno_CORE.dir/opt/arduino/hardware/arduino/avr/cores/arduino/Tone.cpp.obj
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/Tone.cpp.obj
-
-opt/arduino/hardware/arduino/avr/cores/arduino/Tone.i: opt/arduino/hardware/arduino/avr/cores/arduino/Tone.cpp.i
-
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/Tone.i
-
-# target to preprocess a source file
-opt/arduino/hardware/arduino/avr/cores/arduino/Tone.cpp.i:
-	$(MAKE) -f CMakeFiles/uno_CORE.dir/build.make CMakeFiles/uno_CORE.dir/opt/arduino/hardware/arduino/avr/cores/arduino/Tone.cpp.i
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/Tone.cpp.i
-
-opt/arduino/hardware/arduino/avr/cores/arduino/Tone.s: opt/arduino/hardware/arduino/avr/cores/arduino/Tone.cpp.s
-
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/Tone.s
-
-# target to generate assembly for a file
-opt/arduino/hardware/arduino/avr/cores/arduino/Tone.cpp.s:
-	$(MAKE) -f CMakeFiles/uno_CORE.dir/build.make CMakeFiles/uno_CORE.dir/opt/arduino/hardware/arduino/avr/cores/arduino/Tone.cpp.s
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/Tone.cpp.s
-
-opt/arduino/hardware/arduino/avr/cores/arduino/USBCore.obj: opt/arduino/hardware/arduino/avr/cores/arduino/USBCore.cpp.obj
-
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/USBCore.obj
-
-# target to build an object file
-opt/arduino/hardware/arduino/avr/cores/arduino/USBCore.cpp.obj:
-	$(MAKE) -f CMakeFiles/uno_CORE.dir/build.make CMakeFiles/uno_CORE.dir/opt/arduino/hardware/arduino/avr/cores/arduino/USBCore.cpp.obj
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/USBCore.cpp.obj
-
-opt/arduino/hardware/arduino/avr/cores/arduino/USBCore.i: opt/arduino/hardware/arduino/avr/cores/arduino/USBCore.cpp.i
-
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/USBCore.i
-
-# target to preprocess a source file
-opt/arduino/hardware/arduino/avr/cores/arduino/USBCore.cpp.i:
-	$(MAKE) -f CMakeFiles/uno_CORE.dir/build.make CMakeFiles/uno_CORE.dir/opt/arduino/hardware/arduino/avr/cores/arduino/USBCore.cpp.i
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/USBCore.cpp.i
-
-opt/arduino/hardware/arduino/avr/cores/arduino/USBCore.s: opt/arduino/hardware/arduino/avr/cores/arduino/USBCore.cpp.s
-
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/USBCore.s
-
-# target to generate assembly for a file
-opt/arduino/hardware/arduino/avr/cores/arduino/USBCore.cpp.s:
-	$(MAKE) -f CMakeFiles/uno_CORE.dir/build.make CMakeFiles/uno_CORE.dir/opt/arduino/hardware/arduino/avr/cores/arduino/USBCore.cpp.s
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/USBCore.cpp.s
-
-opt/arduino/hardware/arduino/avr/cores/arduino/WInterrupts.obj: opt/arduino/hardware/arduino/avr/cores/arduino/WInterrupts.c.obj
-
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/WInterrupts.obj
-
-# target to build an object file
-opt/arduino/hardware/arduino/avr/cores/arduino/WInterrupts.c.obj:
-	$(MAKE) -f CMakeFiles/uno_CORE.dir/build.make CMakeFiles/uno_CORE.dir/opt/arduino/hardware/arduino/avr/cores/arduino/WInterrupts.c.obj
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/WInterrupts.c.obj
-
-opt/arduino/hardware/arduino/avr/cores/arduino/WInterrupts.i: opt/arduino/hardware/arduino/avr/cores/arduino/WInterrupts.c.i
-
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/WInterrupts.i
-
-# target to preprocess a source file
-opt/arduino/hardware/arduino/avr/cores/arduino/WInterrupts.c.i:
-	$(MAKE) -f CMakeFiles/uno_CORE.dir/build.make CMakeFiles/uno_CORE.dir/opt/arduino/hardware/arduino/avr/cores/arduino/WInterrupts.c.i
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/WInterrupts.c.i
-
-opt/arduino/hardware/arduino/avr/cores/arduino/WInterrupts.s: opt/arduino/hardware/arduino/avr/cores/arduino/WInterrupts.c.s
-
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/WInterrupts.s
-
-# target to generate assembly for a file
-opt/arduino/hardware/arduino/avr/cores/arduino/WInterrupts.c.s:
-	$(MAKE) -f CMakeFiles/uno_CORE.dir/build.make CMakeFiles/uno_CORE.dir/opt/arduino/hardware/arduino/avr/cores/arduino/WInterrupts.c.s
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/WInterrupts.c.s
-
-opt/arduino/hardware/arduino/avr/cores/arduino/WMath.obj: opt/arduino/hardware/arduino/avr/cores/arduino/WMath.cpp.obj
-
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/WMath.obj
-
-# target to build an object file
-opt/arduino/hardware/arduino/avr/cores/arduino/WMath.cpp.obj:
-	$(MAKE) -f CMakeFiles/uno_CORE.dir/build.make CMakeFiles/uno_CORE.dir/opt/arduino/hardware/arduino/avr/cores/arduino/WMath.cpp.obj
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/WMath.cpp.obj
-
-opt/arduino/hardware/arduino/avr/cores/arduino/WMath.i: opt/arduino/hardware/arduino/avr/cores/arduino/WMath.cpp.i
-
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/WMath.i
-
-# target to preprocess a source file
-opt/arduino/hardware/arduino/avr/cores/arduino/WMath.cpp.i:
-	$(MAKE) -f CMakeFiles/uno_CORE.dir/build.make CMakeFiles/uno_CORE.dir/opt/arduino/hardware/arduino/avr/cores/arduino/WMath.cpp.i
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/WMath.cpp.i
-
-opt/arduino/hardware/arduino/avr/cores/arduino/WMath.s: opt/arduino/hardware/arduino/avr/cores/arduino/WMath.cpp.s
-
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/WMath.s
-
-# target to generate assembly for a file
-opt/arduino/hardware/arduino/avr/cores/arduino/WMath.cpp.s:
-	$(MAKE) -f CMakeFiles/uno_CORE.dir/build.make CMakeFiles/uno_CORE.dir/opt/arduino/hardware/arduino/avr/cores/arduino/WMath.cpp.s
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/WMath.cpp.s
-
-opt/arduino/hardware/arduino/avr/cores/arduino/WString.obj: opt/arduino/hardware/arduino/avr/cores/arduino/WString.cpp.obj
-
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/WString.obj
-
-# target to build an object file
-opt/arduino/hardware/arduino/avr/cores/arduino/WString.cpp.obj:
-	$(MAKE) -f CMakeFiles/uno_CORE.dir/build.make CMakeFiles/uno_CORE.dir/opt/arduino/hardware/arduino/avr/cores/arduino/WString.cpp.obj
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/WString.cpp.obj
-
-opt/arduino/hardware/arduino/avr/cores/arduino/WString.i: opt/arduino/hardware/arduino/avr/cores/arduino/WString.cpp.i
-
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/WString.i
-
-# target to preprocess a source file
-opt/arduino/hardware/arduino/avr/cores/arduino/WString.cpp.i:
-	$(MAKE) -f CMakeFiles/uno_CORE.dir/build.make CMakeFiles/uno_CORE.dir/opt/arduino/hardware/arduino/avr/cores/arduino/WString.cpp.i
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/WString.cpp.i
-
-opt/arduino/hardware/arduino/avr/cores/arduino/WString.s: opt/arduino/hardware/arduino/avr/cores/arduino/WString.cpp.s
-
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/WString.s
-
-# target to generate assembly for a file
-opt/arduino/hardware/arduino/avr/cores/arduino/WString.cpp.s:
-	$(MAKE) -f CMakeFiles/uno_CORE.dir/build.make CMakeFiles/uno_CORE.dir/opt/arduino/hardware/arduino/avr/cores/arduino/WString.cpp.s
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/WString.cpp.s
-
-opt/arduino/hardware/arduino/avr/cores/arduino/abi.obj: opt/arduino/hardware/arduino/avr/cores/arduino/abi.cpp.obj
-
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/abi.obj
-
-# target to build an object file
-opt/arduino/hardware/arduino/avr/cores/arduino/abi.cpp.obj:
-	$(MAKE) -f CMakeFiles/uno_CORE.dir/build.make CMakeFiles/uno_CORE.dir/opt/arduino/hardware/arduino/avr/cores/arduino/abi.cpp.obj
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/abi.cpp.obj
-
-opt/arduino/hardware/arduino/avr/cores/arduino/abi.i: opt/arduino/hardware/arduino/avr/cores/arduino/abi.cpp.i
-
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/abi.i
-
-# target to preprocess a source file
-opt/arduino/hardware/arduino/avr/cores/arduino/abi.cpp.i:
-	$(MAKE) -f CMakeFiles/uno_CORE.dir/build.make CMakeFiles/uno_CORE.dir/opt/arduino/hardware/arduino/avr/cores/arduino/abi.cpp.i
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/abi.cpp.i
-
-opt/arduino/hardware/arduino/avr/cores/arduino/abi.s: opt/arduino/hardware/arduino/avr/cores/arduino/abi.cpp.s
-
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/abi.s
-
-# target to generate assembly for a file
-opt/arduino/hardware/arduino/avr/cores/arduino/abi.cpp.s:
-	$(MAKE) -f CMakeFiles/uno_CORE.dir/build.make CMakeFiles/uno_CORE.dir/opt/arduino/hardware/arduino/avr/cores/arduino/abi.cpp.s
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/abi.cpp.s
-
-opt/arduino/hardware/arduino/avr/cores/arduino/hooks.obj: opt/arduino/hardware/arduino/avr/cores/arduino/hooks.c.obj
-
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/hooks.obj
-
-# target to build an object file
-opt/arduino/hardware/arduino/avr/cores/arduino/hooks.c.obj:
-	$(MAKE) -f CMakeFiles/uno_CORE.dir/build.make CMakeFiles/uno_CORE.dir/opt/arduino/hardware/arduino/avr/cores/arduino/hooks.c.obj
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/hooks.c.obj
-
-opt/arduino/hardware/arduino/avr/cores/arduino/hooks.i: opt/arduino/hardware/arduino/avr/cores/arduino/hooks.c.i
-
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/hooks.i
-
-# target to preprocess a source file
-opt/arduino/hardware/arduino/avr/cores/arduino/hooks.c.i:
-	$(MAKE) -f CMakeFiles/uno_CORE.dir/build.make CMakeFiles/uno_CORE.dir/opt/arduino/hardware/arduino/avr/cores/arduino/hooks.c.i
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/hooks.c.i
-
-opt/arduino/hardware/arduino/avr/cores/arduino/hooks.s: opt/arduino/hardware/arduino/avr/cores/arduino/hooks.c.s
-
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/hooks.s
-
-# target to generate assembly for a file
-opt/arduino/hardware/arduino/avr/cores/arduino/hooks.c.s:
-	$(MAKE) -f CMakeFiles/uno_CORE.dir/build.make CMakeFiles/uno_CORE.dir/opt/arduino/hardware/arduino/avr/cores/arduino/hooks.c.s
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/hooks.c.s
-
-opt/arduino/hardware/arduino/avr/cores/arduino/main.obj: opt/arduino/hardware/arduino/avr/cores/arduino/main.cpp.obj
-
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/main.obj
-
-# target to build an object file
-opt/arduino/hardware/arduino/avr/cores/arduino/main.cpp.obj:
-	$(MAKE) -f CMakeFiles/uno_CORE.dir/build.make CMakeFiles/uno_CORE.dir/opt/arduino/hardware/arduino/avr/cores/arduino/main.cpp.obj
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/main.cpp.obj
-
-opt/arduino/hardware/arduino/avr/cores/arduino/main.i: opt/arduino/hardware/arduino/avr/cores/arduino/main.cpp.i
-
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/main.i
-
-# target to preprocess a source file
-opt/arduino/hardware/arduino/avr/cores/arduino/main.cpp.i:
-	$(MAKE) -f CMakeFiles/uno_CORE.dir/build.make CMakeFiles/uno_CORE.dir/opt/arduino/hardware/arduino/avr/cores/arduino/main.cpp.i
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/main.cpp.i
-
-opt/arduino/hardware/arduino/avr/cores/arduino/main.s: opt/arduino/hardware/arduino/avr/cores/arduino/main.cpp.s
-
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/main.s
-
-# target to generate assembly for a file
-opt/arduino/hardware/arduino/avr/cores/arduino/main.cpp.s:
-	$(MAKE) -f CMakeFiles/uno_CORE.dir/build.make CMakeFiles/uno_CORE.dir/opt/arduino/hardware/arduino/avr/cores/arduino/main.cpp.s
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/main.cpp.s
-
-opt/arduino/hardware/arduino/avr/cores/arduino/new.obj: opt/arduino/hardware/arduino/avr/cores/arduino/new.cpp.obj
-
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/new.obj
-
-# target to build an object file
-opt/arduino/hardware/arduino/avr/cores/arduino/new.cpp.obj:
-	$(MAKE) -f CMakeFiles/uno_CORE.dir/build.make CMakeFiles/uno_CORE.dir/opt/arduino/hardware/arduino/avr/cores/arduino/new.cpp.obj
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/new.cpp.obj
-
-opt/arduino/hardware/arduino/avr/cores/arduino/new.i: opt/arduino/hardware/arduino/avr/cores/arduino/new.cpp.i
-
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/new.i
-
-# target to preprocess a source file
-opt/arduino/hardware/arduino/avr/cores/arduino/new.cpp.i:
-	$(MAKE) -f CMakeFiles/uno_CORE.dir/build.make CMakeFiles/uno_CORE.dir/opt/arduino/hardware/arduino/avr/cores/arduino/new.cpp.i
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/new.cpp.i
-
-opt/arduino/hardware/arduino/avr/cores/arduino/new.s: opt/arduino/hardware/arduino/avr/cores/arduino/new.cpp.s
-
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/new.s
-
-# target to generate assembly for a file
-opt/arduino/hardware/arduino/avr/cores/arduino/new.cpp.s:
-	$(MAKE) -f CMakeFiles/uno_CORE.dir/build.make CMakeFiles/uno_CORE.dir/opt/arduino/hardware/arduino/avr/cores/arduino/new.cpp.s
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/new.cpp.s
-
-opt/arduino/hardware/arduino/avr/cores/arduino/wiring.obj: opt/arduino/hardware/arduino/avr/cores/arduino/wiring.c.obj
-
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/wiring.obj
-
-# target to build an object file
-opt/arduino/hardware/arduino/avr/cores/arduino/wiring.c.obj:
-	$(MAKE) -f CMakeFiles/uno_CORE.dir/build.make CMakeFiles/uno_CORE.dir/opt/arduino/hardware/arduino/avr/cores/arduino/wiring.c.obj
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/wiring.c.obj
-
-opt/arduino/hardware/arduino/avr/cores/arduino/wiring.i: opt/arduino/hardware/arduino/avr/cores/arduino/wiring.c.i
-
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/wiring.i
-
-# target to preprocess a source file
-opt/arduino/hardware/arduino/avr/cores/arduino/wiring.c.i:
-	$(MAKE) -f CMakeFiles/uno_CORE.dir/build.make CMakeFiles/uno_CORE.dir/opt/arduino/hardware/arduino/avr/cores/arduino/wiring.c.i
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/wiring.c.i
-
-opt/arduino/hardware/arduino/avr/cores/arduino/wiring.s: opt/arduino/hardware/arduino/avr/cores/arduino/wiring.c.s
-
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/wiring.s
-
-# target to generate assembly for a file
-opt/arduino/hardware/arduino/avr/cores/arduino/wiring.c.s:
-	$(MAKE) -f CMakeFiles/uno_CORE.dir/build.make CMakeFiles/uno_CORE.dir/opt/arduino/hardware/arduino/avr/cores/arduino/wiring.c.s
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/wiring.c.s
-
-opt/arduino/hardware/arduino/avr/cores/arduino/wiring_analog.obj: opt/arduino/hardware/arduino/avr/cores/arduino/wiring_analog.c.obj
-
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/wiring_analog.obj
-
-# target to build an object file
-opt/arduino/hardware/arduino/avr/cores/arduino/wiring_analog.c.obj:
-	$(MAKE) -f CMakeFiles/uno_CORE.dir/build.make CMakeFiles/uno_CORE.dir/opt/arduino/hardware/arduino/avr/cores/arduino/wiring_analog.c.obj
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/wiring_analog.c.obj
-
-opt/arduino/hardware/arduino/avr/cores/arduino/wiring_analog.i: opt/arduino/hardware/arduino/avr/cores/arduino/wiring_analog.c.i
-
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/wiring_analog.i
-
-# target to preprocess a source file
-opt/arduino/hardware/arduino/avr/cores/arduino/wiring_analog.c.i:
-	$(MAKE) -f CMakeFiles/uno_CORE.dir/build.make CMakeFiles/uno_CORE.dir/opt/arduino/hardware/arduino/avr/cores/arduino/wiring_analog.c.i
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/wiring_analog.c.i
-
-opt/arduino/hardware/arduino/avr/cores/arduino/wiring_analog.s: opt/arduino/hardware/arduino/avr/cores/arduino/wiring_analog.c.s
-
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/wiring_analog.s
-
-# target to generate assembly for a file
-opt/arduino/hardware/arduino/avr/cores/arduino/wiring_analog.c.s:
-	$(MAKE) -f CMakeFiles/uno_CORE.dir/build.make CMakeFiles/uno_CORE.dir/opt/arduino/hardware/arduino/avr/cores/arduino/wiring_analog.c.s
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/wiring_analog.c.s
-
-opt/arduino/hardware/arduino/avr/cores/arduino/wiring_digital.obj: opt/arduino/hardware/arduino/avr/cores/arduino/wiring_digital.c.obj
-
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/wiring_digital.obj
-
-# target to build an object file
-opt/arduino/hardware/arduino/avr/cores/arduino/wiring_digital.c.obj:
-	$(MAKE) -f CMakeFiles/uno_CORE.dir/build.make CMakeFiles/uno_CORE.dir/opt/arduino/hardware/arduino/avr/cores/arduino/wiring_digital.c.obj
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/wiring_digital.c.obj
-
-opt/arduino/hardware/arduino/avr/cores/arduino/wiring_digital.i: opt/arduino/hardware/arduino/avr/cores/arduino/wiring_digital.c.i
-
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/wiring_digital.i
-
-# target to preprocess a source file
-opt/arduino/hardware/arduino/avr/cores/arduino/wiring_digital.c.i:
-	$(MAKE) -f CMakeFiles/uno_CORE.dir/build.make CMakeFiles/uno_CORE.dir/opt/arduino/hardware/arduino/avr/cores/arduino/wiring_digital.c.i
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/wiring_digital.c.i
-
-opt/arduino/hardware/arduino/avr/cores/arduino/wiring_digital.s: opt/arduino/hardware/arduino/avr/cores/arduino/wiring_digital.c.s
-
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/wiring_digital.s
-
-# target to generate assembly for a file
-opt/arduino/hardware/arduino/avr/cores/arduino/wiring_digital.c.s:
-	$(MAKE) -f CMakeFiles/uno_CORE.dir/build.make CMakeFiles/uno_CORE.dir/opt/arduino/hardware/arduino/avr/cores/arduino/wiring_digital.c.s
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/wiring_digital.c.s
-
-opt/arduino/hardware/arduino/avr/cores/arduino/wiring_pulse.obj: opt/arduino/hardware/arduino/avr/cores/arduino/wiring_pulse.c.obj
-
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/wiring_pulse.obj
-
-# target to build an object file
-opt/arduino/hardware/arduino/avr/cores/arduino/wiring_pulse.c.obj:
-	$(MAKE) -f CMakeFiles/uno_CORE.dir/build.make CMakeFiles/uno_CORE.dir/opt/arduino/hardware/arduino/avr/cores/arduino/wiring_pulse.c.obj
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/wiring_pulse.c.obj
-
-opt/arduino/hardware/arduino/avr/cores/arduino/wiring_pulse.i: opt/arduino/hardware/arduino/avr/cores/arduino/wiring_pulse.c.i
-
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/wiring_pulse.i
-
-# target to preprocess a source file
-opt/arduino/hardware/arduino/avr/cores/arduino/wiring_pulse.c.i:
-	$(MAKE) -f CMakeFiles/uno_CORE.dir/build.make CMakeFiles/uno_CORE.dir/opt/arduino/hardware/arduino/avr/cores/arduino/wiring_pulse.c.i
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/wiring_pulse.c.i
-
-opt/arduino/hardware/arduino/avr/cores/arduino/wiring_pulse.s: opt/arduino/hardware/arduino/avr/cores/arduino/wiring_pulse.c.s
-
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/wiring_pulse.s
-
-# target to generate assembly for a file
-opt/arduino/hardware/arduino/avr/cores/arduino/wiring_pulse.c.s:
-	$(MAKE) -f CMakeFiles/uno_CORE.dir/build.make CMakeFiles/uno_CORE.dir/opt/arduino/hardware/arduino/avr/cores/arduino/wiring_pulse.c.s
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/wiring_pulse.c.s
-
-opt/arduino/hardware/arduino/avr/cores/arduino/wiring_shift.obj: opt/arduino/hardware/arduino/avr/cores/arduino/wiring_shift.c.obj
-
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/wiring_shift.obj
-
-# target to build an object file
-opt/arduino/hardware/arduino/avr/cores/arduino/wiring_shift.c.obj:
-	$(MAKE) -f CMakeFiles/uno_CORE.dir/build.make CMakeFiles/uno_CORE.dir/opt/arduino/hardware/arduino/avr/cores/arduino/wiring_shift.c.obj
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/wiring_shift.c.obj
-
-opt/arduino/hardware/arduino/avr/cores/arduino/wiring_shift.i: opt/arduino/hardware/arduino/avr/cores/arduino/wiring_shift.c.i
-
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/wiring_shift.i
-
-# target to preprocess a source file
-opt/arduino/hardware/arduino/avr/cores/arduino/wiring_shift.c.i:
-	$(MAKE) -f CMakeFiles/uno_CORE.dir/build.make CMakeFiles/uno_CORE.dir/opt/arduino/hardware/arduino/avr/cores/arduino/wiring_shift.c.i
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/wiring_shift.c.i
-
-opt/arduino/hardware/arduino/avr/cores/arduino/wiring_shift.s: opt/arduino/hardware/arduino/avr/cores/arduino/wiring_shift.c.s
-
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/wiring_shift.s
-
-# target to generate assembly for a file
-opt/arduino/hardware/arduino/avr/cores/arduino/wiring_shift.c.s:
-	$(MAKE) -f CMakeFiles/uno_CORE.dir/build.make CMakeFiles/uno_CORE.dir/opt/arduino/hardware/arduino/avr/cores/arduino/wiring_shift.c.s
-.PHONY : opt/arduino/hardware/arduino/avr/cores/arduino/wiring_shift.c.s
+src/main.cpp.s:
+	$(MAKE) -f CMakeFiles/megamind-firmware.dir/build.make CMakeFiles/megamind-firmware.dir/src/main.cpp.s
+.PHONY : src/main.cpp.s
 
 # Help Target
 help:
@@ -856,88 +260,20 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... rebuild_cache"
-	@echo "... Megamind"
 	@echo "... edit_cache"
-	@echo "... uno_CORE"
-	@echo "... Megamind-size"
-	@echo "... Megamind-upload"
-	@echo "... upload"
-	@echo "... Megamind_Megamind.ino.obj"
-	@echo "... Megamind_Megamind.ino.i"
-	@echo "... Megamind_Megamind.ino.s"
-	@echo "... opt/arduino/hardware/arduino/avr/cores/arduino/CDC.obj"
-	@echo "... opt/arduino/hardware/arduino/avr/cores/arduino/CDC.i"
-	@echo "... opt/arduino/hardware/arduino/avr/cores/arduino/CDC.s"
-	@echo "... opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial.obj"
-	@echo "... opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial.i"
-	@echo "... opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial.s"
-	@echo "... opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial0.obj"
-	@echo "... opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial0.i"
-	@echo "... opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial0.s"
-	@echo "... opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial1.obj"
-	@echo "... opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial1.i"
-	@echo "... opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial1.s"
-	@echo "... opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial2.obj"
-	@echo "... opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial2.i"
-	@echo "... opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial2.s"
-	@echo "... opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial3.obj"
-	@echo "... opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial3.i"
-	@echo "... opt/arduino/hardware/arduino/avr/cores/arduino/HardwareSerial3.s"
-	@echo "... opt/arduino/hardware/arduino/avr/cores/arduino/IPAddress.obj"
-	@echo "... opt/arduino/hardware/arduino/avr/cores/arduino/IPAddress.i"
-	@echo "... opt/arduino/hardware/arduino/avr/cores/arduino/IPAddress.s"
-	@echo "... opt/arduino/hardware/arduino/avr/cores/arduino/PluggableUSB.obj"
-	@echo "... opt/arduino/hardware/arduino/avr/cores/arduino/PluggableUSB.i"
-	@echo "... opt/arduino/hardware/arduino/avr/cores/arduino/PluggableUSB.s"
-	@echo "... opt/arduino/hardware/arduino/avr/cores/arduino/Print.obj"
-	@echo "... opt/arduino/hardware/arduino/avr/cores/arduino/Print.i"
-	@echo "... opt/arduino/hardware/arduino/avr/cores/arduino/Print.s"
-	@echo "... opt/arduino/hardware/arduino/avr/cores/arduino/Stream.obj"
-	@echo "... opt/arduino/hardware/arduino/avr/cores/arduino/Stream.i"
-	@echo "... opt/arduino/hardware/arduino/avr/cores/arduino/Stream.s"
-	@echo "... opt/arduino/hardware/arduino/avr/cores/arduino/Tone.obj"
-	@echo "... opt/arduino/hardware/arduino/avr/cores/arduino/Tone.i"
-	@echo "... opt/arduino/hardware/arduino/avr/cores/arduino/Tone.s"
-	@echo "... opt/arduino/hardware/arduino/avr/cores/arduino/USBCore.obj"
-	@echo "... opt/arduino/hardware/arduino/avr/cores/arduino/USBCore.i"
-	@echo "... opt/arduino/hardware/arduino/avr/cores/arduino/USBCore.s"
-	@echo "... opt/arduino/hardware/arduino/avr/cores/arduino/WInterrupts.obj"
-	@echo "... opt/arduino/hardware/arduino/avr/cores/arduino/WInterrupts.i"
-	@echo "... opt/arduino/hardware/arduino/avr/cores/arduino/WInterrupts.s"
-	@echo "... opt/arduino/hardware/arduino/avr/cores/arduino/WMath.obj"
-	@echo "... opt/arduino/hardware/arduino/avr/cores/arduino/WMath.i"
-	@echo "... opt/arduino/hardware/arduino/avr/cores/arduino/WMath.s"
-	@echo "... opt/arduino/hardware/arduino/avr/cores/arduino/WString.obj"
-	@echo "... opt/arduino/hardware/arduino/avr/cores/arduino/WString.i"
-	@echo "... opt/arduino/hardware/arduino/avr/cores/arduino/WString.s"
-	@echo "... opt/arduino/hardware/arduino/avr/cores/arduino/abi.obj"
-	@echo "... opt/arduino/hardware/arduino/avr/cores/arduino/abi.i"
-	@echo "... opt/arduino/hardware/arduino/avr/cores/arduino/abi.s"
-	@echo "... opt/arduino/hardware/arduino/avr/cores/arduino/hooks.obj"
-	@echo "... opt/arduino/hardware/arduino/avr/cores/arduino/hooks.i"
-	@echo "... opt/arduino/hardware/arduino/avr/cores/arduino/hooks.s"
-	@echo "... opt/arduino/hardware/arduino/avr/cores/arduino/main.obj"
-	@echo "... opt/arduino/hardware/arduino/avr/cores/arduino/main.i"
-	@echo "... opt/arduino/hardware/arduino/avr/cores/arduino/main.s"
-	@echo "... opt/arduino/hardware/arduino/avr/cores/arduino/new.obj"
-	@echo "... opt/arduino/hardware/arduino/avr/cores/arduino/new.i"
-	@echo "... opt/arduino/hardware/arduino/avr/cores/arduino/new.s"
-	@echo "... opt/arduino/hardware/arduino/avr/cores/arduino/wiring.obj"
-	@echo "... opt/arduino/hardware/arduino/avr/cores/arduino/wiring.i"
-	@echo "... opt/arduino/hardware/arduino/avr/cores/arduino/wiring.s"
-	@echo "... opt/arduino/hardware/arduino/avr/cores/arduino/wiring_analog.obj"
-	@echo "... opt/arduino/hardware/arduino/avr/cores/arduino/wiring_analog.i"
-	@echo "... opt/arduino/hardware/arduino/avr/cores/arduino/wiring_analog.s"
-	@echo "... opt/arduino/hardware/arduino/avr/cores/arduino/wiring_digital.obj"
-	@echo "... opt/arduino/hardware/arduino/avr/cores/arduino/wiring_digital.i"
-	@echo "... opt/arduino/hardware/arduino/avr/cores/arduino/wiring_digital.s"
-	@echo "... opt/arduino/hardware/arduino/avr/cores/arduino/wiring_pulse.obj"
-	@echo "... opt/arduino/hardware/arduino/avr/cores/arduino/wiring_pulse.i"
-	@echo "... opt/arduino/hardware/arduino/avr/cores/arduino/wiring_pulse.s"
-	@echo "... opt/arduino/hardware/arduino/avr/cores/arduino/wiring_shift.obj"
-	@echo "... opt/arduino/hardware/arduino/avr/cores/arduino/wiring_shift.i"
-	@echo "... opt/arduino/hardware/arduino/avr/cores/arduino/wiring_shift.s"
+	@echo "... rebuild_cache"
+	@echo "... PLATFORMIO_REBUILD_PROJECT_INDEX"
+	@echo "... PLATFORMIO_UPLOAD"
+	@echo "... PLATFORMIO_UPDATE_ALL"
+	@echo "... PLATFORMIO_BUILD"
+	@echo "... PLATFORMIO_UPLOADFS"
+	@echo "... megamind-firmware"
+	@echo "... PLATFORMIO_CLEAN"
+	@echo "... PLATFORMIO_TEST"
+	@echo "... PLATFORMIO_PROGRAM"
+	@echo "... src/main.o"
+	@echo "... src/main.i"
+	@echo "... src/main.s"
 .PHONY : help
 
 

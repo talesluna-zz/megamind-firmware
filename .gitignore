@@ -1,10 +1,8 @@
-.idea
-*.hex
-*.elf
-*.eep
-*.cbp
-*.cpp
-cmake_install.cmake
+.pioenvs
+.piolibdeps
+CMakeListsPrivate.txt
 CMakeCache.txt
-libuno_CORE.a
 CMakeFiles
+cmake_install.cmake
+Makefile
+.idea
